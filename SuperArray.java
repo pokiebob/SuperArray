@@ -23,8 +23,9 @@ public class SuperArray {
   }
 
   public String set(int index, String element) {
+    String prev = data[index];
     data[index] = element;
-    return element;
+    return prev;
   }
 
   public static void main(String[] args) {
