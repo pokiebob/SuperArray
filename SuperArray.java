@@ -32,6 +32,10 @@ public class SuperArray {
     return prev;
   }
 
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
   private void resize() {
     capacity += 10;
     String[] newArray = new String[capacity];
@@ -43,6 +47,7 @@ public class SuperArray {
 
   public static void main(String[] args) {
     // SuperArray words = new SuperArray();
+    // System.out.println(words.isEmpty());
     // System.out.println(words.size());
     // if (words.add("Hi")) {
     //   System.out.println(words.size());
