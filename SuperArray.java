@@ -18,11 +18,16 @@ public class SuperArray {
     return true;
   }
 
+  public String get(int index) {
+    return data[index];
+  }
+
   public static void main(String[] args) {
     SuperArray words = new SuperArray();
     System.out.println(words.size());
     if (words.add("Hello")) {
       System.out.println(words.size());
+      System.out.println(words.get(0));
     }
   }
 }
