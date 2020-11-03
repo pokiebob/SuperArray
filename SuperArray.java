@@ -2,10 +2,11 @@ public class SuperArray {
 
   private String[] data;
   private int size;
+  private int capacity = 10;
 
   public SuperArray() {
     size = 0;
-    data = new String[10];
+    data = new String[capacity];
   }
 
   public int size() {
@@ -28,6 +29,15 @@ public class SuperArray {
     return prev;
   }
 
+  private void resize() {
+    capacity += 10;
+    String[] newArray = new String[capacity];
+    for (int i = 0; i < size; i++) {
+      newArray[i] = data[i];
+    }
+    data = newArray;
+  }
+
   public static void main(String[] args) {
     SuperArray words = new SuperArray();
     System.out.println(words.size());
@@ -37,5 +47,8 @@ public class SuperArray {
     }
     System.out.println(words.set(0, "Hello"));
     System.out.println(words.get(0));
+    words.resize();
+    System.out.println(words.set(10, "World"));
+    System.out.println(words.get(10));
   }
 }
