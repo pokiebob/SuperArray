@@ -45,18 +45,31 @@ public class SuperArray {
     data = newArray;
   }
 
+  public String toString() {
+    String str = "[";
+    for (int i = 0; i < size; i++) {
+      if (data[i] != null) {
+        str += data[i] + i;
+        if (i < size - 1) {
+          str += ", ";
+        }
+      }
+    }
+    return str + "]";
+  }
+
   public static void main(String[] args) {
-    // SuperArray words = new SuperArray();
-    // System.out.println(words.isEmpty());
-    // System.out.println(words.size());
-    // if (words.add("Hi")) {
-    //   System.out.println(words.size());
-    //   System.out.println(words.get(0));
-    // }
-    // System.out.println(words.set(0, "Hello"));
-    // System.out.println(words.get(0));
-    // words.resize();
-    // System.out.println(words.set(10, "World"));
-    // System.out.println(words.get(10));
+    SuperArray words = new SuperArray();
+    System.out.println(words.isEmpty());
+    System.out.println(words.size());
+    System.out.println(words.add("Hi"));
+    System.out.println(words.size());
+    System.out.println(words.get(0));
+    System.out.println(words.set(0, "Hello"));
+    System.out.println(words.get(0));
+    words.resize();
+    System.out.println(words.add("World"));
+    System.out.println(words.get(10));
+    System.out.println(words.toString());
   }
 }
