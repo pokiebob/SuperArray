@@ -91,7 +91,7 @@ public class SuperArray {
     String str = "[";
     for (int i = 0; i < size; i++) {
       if (data[i] != null) {
-        str += data[i] + i;
+        str += data[i];
         if (i < size - 1) {
           str += ", ";
         }
