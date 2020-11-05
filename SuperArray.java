@@ -109,6 +109,15 @@ public class SuperArray {
     return false;
   }
 
+  public int indexOf(String s) {
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(s)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   public static void main(String[] args) {
     SuperArray words = new SuperArray();
     System.out.println(words.isEmpty());
@@ -139,5 +148,7 @@ public class SuperArray {
     System.out.println(words2.add("am"));
     System.out.println(words2.add("tired"));
     System.out.println(words2.toString());
+    System.out.println(words2.indexOf("tired"));
+    System.out.println(words2.indexOf("Hello"));
   }
 }
