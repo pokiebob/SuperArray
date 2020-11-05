@@ -54,6 +54,16 @@ public class SuperArray {
     return false;
   }
 
+  public String remove(int index) {
+    String removed = data[index];
+    for (int i = index; i < size-1; i++) {
+      data[i] = data[i+1];
+    }
+    data[size-1] = null;
+    size--;
+    return removed;
+  }
+
   public String get(int index) {
     return data[index];
   }
@@ -119,6 +129,8 @@ public class SuperArray {
     System.out.println(words.add(2, "I"));
     System.out.println(words.toString());
     System.out.println(words.add(3, "am"));
+    System.out.println(words.toString());
+    System.out.println(words.remove(1));
     System.out.println(words.toString());
     words.clear();
     System.out.println(words.isEmpty());
