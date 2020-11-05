@@ -9,6 +9,12 @@ public class SuperArray {
     data = new String[capacity];
   }
 
+  public void clear() {
+    capacity = 10;
+    data = new String[capacity];
+    size = 0;
+  }
+
   public int size() {
     return size;
   }
@@ -108,5 +114,7 @@ public class SuperArray {
     System.out.println(words.toString());
     System.out.println(words.add(3, "am"));
     System.out.println(words.toString());
+    words.clear();
+    System.out.println(words.isEmpty());
   }
 }
