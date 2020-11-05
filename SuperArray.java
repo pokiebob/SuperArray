@@ -127,39 +127,39 @@ public class SuperArray {
   }
 
   public static void main(String[] args) {
-    SuperArray words = new SuperArray();
-    System.out.println(words.isEmpty());
-    System.out.println(words.size());
-    System.out.println(words.add("Hi"));
-    System.out.println(words.size());
-    System.out.println(words.get(0));
-    System.out.println(words.set(0, "Hello"));
-    System.out.println(words.get(0));
-    words.resize();
-    System.out.println(words.add("World"));
-    System.out.println(words.get(10));
-    System.out.println(words.toString());
-    System.out.println(words.contains("World"));
-    System.out.println(words.contains("Hi"));
-    System.out.println(words.add("Cyrus"));
-    System.out.println(words.toString());
-    System.out.println(words.add(2, "I"));
-    System.out.println(words.toString());
-    System.out.println(words.add(3, "am"));
-    System.out.println(words.toString());
-    System.out.println(words.remove(1));
-    System.out.println(words.toString());
-    words.clear();
-    System.out.println(words.isEmpty());
-    SuperArray words2 = new SuperArray(3);
-    System.out.println(words2.add("I"));
-    System.out.println(words2.add("am"));
-    System.out.println(words2.add("tired"));
-    System.out.println(words2.toString());
-    System.out.println(words2.indexOf("tired"));
-    System.out.println(words2.indexOf("Hello"));
-    for (String element : words2.toArray()) {
-      System.out.println(element);
-    }
+    // SuperArray words = new SuperArray();
+    // System.out.println(words.isEmpty());
+    // System.out.println(words.size());
+    // System.out.println(words.add("Hi"));
+    // System.out.println(words.size());
+    // System.out.println(words.get(0));
+    // System.out.println(words.set(0, "Hello"));
+    // System.out.println(words.get(0));
+    // words.resize();
+    // System.out.println(words.add("World"));
+    // System.out.println(words.get(10));
+    // System.out.println(words.toString());
+    // System.out.println(words.contains("World"));
+    // System.out.println(words.contains("Hi"));
+    // System.out.println(words.add("Cyrus"));
+    // System.out.println(words.toString());
+    // System.out.println(words.add(2, "I"));
+    // System.out.println(words.toString());
+    // System.out.println(words.add(3, "am"));
+    // System.out.println(words.toString());
+    // System.out.println(words.remove(1));
+    // System.out.println(words.toString());
+    // words.clear();
+    // System.out.println(words.isEmpty());
+    // SuperArray words2 = new SuperArray(3);
+    // System.out.println(words2.add("I"));
+    // System.out.println(words2.add("am"));
+    // System.out.println(words2.add("tired"));
+    // System.out.println(words2.toString());
+    // System.out.println(words2.indexOf("tired"));
+    // System.out.println(words2.indexOf("Hello"));
+    // for (String element : words2.toArray()) {
+    //   System.out.println(element);
+    // }
   }
 }
