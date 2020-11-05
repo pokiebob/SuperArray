@@ -22,6 +22,26 @@ public class SuperArray {
     return true;
   }
 
+  public boolean add(int index, String element) {
+    if (index <= size) {
+      if (size >= capacity) {
+        this.resize();
+      }
+      String prev = data[index];
+      String cur;
+
+      for (int i = index + 1; i < size+1; i++) {
+        cur = data[i];
+        data[i] = prev;
+        prev = cur;
+      }
+      data[index] = element;
+      size++;
+      return true;
+    }
+    return false;
+  }
+
   public String get(int index) {
     return data[index];
   }
@@ -58,6 +78,15 @@ public class SuperArray {
     return str + "]";
   }
 
+  public boolean contains(String s) {
+    for (String str : data) {
+      if (str != null && str.equals(s)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
     SuperArray words = new SuperArray();
     System.out.println(words.isEmpty());
@@ -70,6 +99,14 @@ public class SuperArray {
     words.resize();
     System.out.println(words.add("World"));
     System.out.println(words.get(10));
+    System.out.println(words.toString());
+    System.out.println(words.contains("World"));
+    System.out.println(words.contains("Hi"));
+    System.out.println(words.add("Cyrus"));
+    System.out.println(words.toString());
+    System.out.println(words.add(2, "I"));
+    System.out.println(words.toString());
+    System.out.println(words.add(3, "am"));
     System.out.println(words.toString());
   }
 }
