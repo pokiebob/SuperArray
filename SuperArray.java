@@ -118,6 +118,14 @@ public class SuperArray {
     return -1;
   }
 
+  public String[] toArray() {
+      String[] arr = new String[size];
+      for (int i = 0; i < size; i++) {
+        arr[i] = data[i];
+      }
+      return arr;
+  }
+
   public static void main(String[] args) {
     SuperArray words = new SuperArray();
     System.out.println(words.isEmpty());
@@ -150,5 +158,8 @@ public class SuperArray {
     System.out.println(words2.toString());
     System.out.println(words2.indexOf("tired"));
     System.out.println(words2.indexOf("Hello"));
+    for (String element : words2.toArray()) {
+      System.out.println(element);
+    }
   }
 }
