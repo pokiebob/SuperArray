@@ -21,6 +21,27 @@ public class Demo {
 		return s;
 	}
 
+	public static SuperArray zip(SuperArray a, SuperArray b) {
+		SuperArray zipped = new SuperArray();
+		int aIndex = 0;
+		int bIndex = 0;
+		while (aIndex < a.size() && bIndex < b.size()) {
+			zipped.add(a.get(aIndex));
+			zipped.add(b.get(bIndex));
+			aIndex++;
+			bIndex++;
+		}
+		while (aIndex < a.size()) {
+			zipped.add(a.get(aIndex));
+			aIndex++;
+		}
+		while (bIndex < b.size()) {
+			zipped.add(b.get(bIndex));
+			bIndex++;
+		}
+		return zipped;
+	}
+
 	public static void main(String[] args) {
 		SuperArray words = new SuperArray();
 		words.add("kani");
@@ -63,6 +84,9 @@ public class Demo {
 
 	    System.out.println(words.equals(words2));
 	    System.out.println(wordss.equals(words3));
+
+	    SuperArray wordss2 = zip(words, words2);
+	    System.out.println(wordss2);
 
 	}
 }
