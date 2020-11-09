@@ -118,6 +118,15 @@ public class SuperArray {
     return -1;
   }
 
+  public int lastIndexOf(String value) {
+    for (int i = size-1; i >= 0; i--) {
+      if (data[i].equals(value)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   public String[] toArray() {
       String[] arr = new String[size];
       for (int i = 0; i < size; i++) {
