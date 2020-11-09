@@ -135,6 +135,15 @@ public class SuperArray {
       return arr;
   }
 
+  public boolean equals(SuperArray other) {
+    for (int i = 0; i < size; i++) {
+      if (! data[i].equals(other.get(i))) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static void main(String[] args) {
     // SuperArray words = new SuperArray();
     // System.out.println(words.isEmpty());

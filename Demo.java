@@ -36,6 +36,7 @@ public class Demo {
     	words.add("toro"); 
 
 	    System.out.println(words);
+	    System.out.println(words.lastIndexOf("una"));
 	    removeDuplicates(words);
 	    System.out.println(words);
 
@@ -49,11 +50,19 @@ public class Demo {
 	    words2.add("ebi");
 
 	    System.out.println(words2);
+	    System.out.println(words2.lastIndexOf("kari"));
 	    removeDuplicates(words2);
 	    System.out.println(words2);
 
 	    SuperArray wordss = findOverlap(words, words2);
 	    System.out.println(wordss);
+
+	    SuperArray words3 = new SuperArray();
+	    words3.add("ebi");
+	    words3.add("toro");
+
+	    System.out.println(words.equals(words2));
+	    System.out.println(wordss.equals(words3));
 
 	}
 }
