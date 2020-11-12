@@ -10,9 +10,13 @@ public class SuperArray {
   }
 
   public SuperArray(int initialCapacity) {
+    if (initialCapacity < 0) {
+      throw new IllegalArgumentException("Initial Capacity " + initialCapacity + " cannot be negative");
+    }
     size = 0;
     capacity = initialCapacity;
     data = new String[capacity];
+
   }
 
   public void clear() {
@@ -35,26 +39,25 @@ public class SuperArray {
   }
 
   public boolean add(int index, String element) {
-    if (index <= size) {
-      if (size >= capacity) {
-        this.resize();
-      }
-      String prev = data[index];
-      String cur;
 
-      for (int i = index + 1; i < size+1; i++) {
-        cur = data[i];
-        data[i] = prev;
-        prev = cur;
-      }
-      data[index] = element;
-      size++;
-      return true;
+    if (size >= capacity) {
+      this.resize();
     }
-    return false;
+    String prev = data[index];
+    String cur;
+
+    for (int i = index + 1; i < size+1; i++) {
+      cur = data[i];
+      data[i] = prev;
+      prev = cur;
+    }
+    data[index] = element;
+    size++;
+    return true;
   }
 
   public String remove(int index) {
+
     String removed = data[index];
     for (int i = index; i < size-1; i++) {
       data[i] = data[i+1];
@@ -65,10 +68,12 @@ public class SuperArray {
   }
 
   public String get(int index) {
+
     return data[index];
   }
 
   public String set(int index, String element) {
+
     String prev = data[index];
     data[index] = element;
     return prev;
@@ -145,39 +150,38 @@ public class SuperArray {
   }
 
   public static void main(String[] args) {
-    // SuperArray words = new SuperArray();
-    // System.out.println(words.isEmpty());
-    // System.out.println(words.size());
-    // System.out.println(words.add("Hi"));
-    // System.out.println(words.size());
-    // System.out.println(words.get(0));
-    // System.out.println(words.set(0, "Hello"));
-    // System.out.println(words.get(0));
-    // words.resize();
-    // System.out.println(words.add("World"));
-    // System.out.println(words.get(10));
-    // System.out.println(words.toString());
-    // System.out.println(words.contains("World"));
-    // System.out.println(words.contains("Hi"));
-    // System.out.println(words.add("Cyrus"));
-    // System.out.println(words.toString());
-    // System.out.println(words.add(2, "I"));
-    // System.out.println(words.toString());
-    // System.out.println(words.add(3, "am"));
-    // System.out.println(words.toString());
-    // System.out.println(words.remove(1));
-    // System.out.println(words.toString());
-    // words.clear();
-    // System.out.println(words.isEmpty());
-    // SuperArray words2 = new SuperArray(3);
-    // System.out.println(words2.add("I"));
-    // System.out.println(words2.add("am"));
-    // System.out.println(words2.add("tired"));
-    // System.out.println(words2.toString());
-    // System.out.println(words2.indexOf("tired"));
-    // System.out.println(words2.indexOf("Hello"));
-    // for (String element : words2.toArray()) {
-    //   System.out.println(element);
-    // }
+    SuperArray words = new SuperArray();
+    System.out.println(words.isEmpty());
+    System.out.println(words.size());
+    System.out.println(words.add("Hi"));
+    System.out.println(words.size());
+    System.out.println(words.get(0));
+    System.out.println(words.set(0, "Hello"));
+    System.out.println(words.get(0));
+    words.resize();
+    System.out.println(words.add("World"));
+    System.out.println(words.toString());
+    System.out.println(words.contains("World"));
+    System.out.println(words.contains("Hi"));
+    System.out.println(words.add("Cyrus"));
+    System.out.println(words.toString());
+    System.out.println(words.add(2, "I"));
+    System.out.println(words.toString());
+    System.out.println(words.add(3, "am"));
+    System.out.println(words.toString());
+    System.out.println(words.remove(1));
+    System.out.println(words.toString());
+    words.clear();
+    System.out.println(words.isEmpty());
+    SuperArray words2 = new SuperArray(3);
+    System.out.println(words2.add("I"));
+    System.out.println(words2.add("am"));
+    System.out.println(words2.add("tired"));
+    System.out.println(words2.toString());
+    System.out.println(words2.indexOf("tired"));
+    System.out.println(words2.indexOf("Hello"));
+    for (String element : words2.toArray()) {
+      System.out.println(element);
+    }
   }
 }
