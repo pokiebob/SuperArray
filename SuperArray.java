@@ -81,7 +81,11 @@ public class SuperArray {
   }
 
   public String set(int index, String element) {
-
+    if (index < 0) {
+      throw new IndexOutOfBoundsException("Index " + index + " cannot be less than zero");
+    } else if (index >= size()) {
+      throw new IndexOutOfBoundsException("Index " + index + " cannot be greater than or equal to size");
+    }
     String prev = data[index];
     data[index] = element;
     return prev;
