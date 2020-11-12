@@ -57,7 +57,11 @@ public class SuperArray {
   }
 
   public String remove(int index) {
-
+    if (index < 0) {
+      throw new IndexOutOfBoundsException("Index " + index + " cannot be less than zero");
+    } else if (index >= size()) {
+      throw new IndexOutOfBoundsException("Index " + index + " cannot be greater than or equal to size");
+    }
     String removed = data[index];
     for (int i = index; i < size-1; i++) {
       data[i] = data[i+1];
