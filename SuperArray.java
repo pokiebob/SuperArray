@@ -41,7 +41,7 @@ public class SuperArray {
   public boolean add(int index, String element) {
     if (index < 0) {
       throw new IndexOutOfBoundsException("Index " + index + " cannot be less than zero");
-    } else if (index >= size()) {
+    } else if (index > size()) {
       throw new IndexOutOfBoundsException("Index " + index + " cannot be greater than or equal to size");
     }
     if (size >= capacity) {
